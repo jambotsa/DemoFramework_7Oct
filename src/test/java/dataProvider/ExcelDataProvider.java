@@ -14,9 +14,10 @@ public class ExcelDataProvider {
 	XSSFSheet sheet;
 	
 	
-	public  ExcelDataProvider (String excelpath){
+	public  ExcelDataProvider (){
 		try {
-			File src = new File("C:\\Users\\kalpesh.Lenovo-kalpesh\\Desktop\\Sadhana java files\\7oct.etlhive\\ApplicationTestData\\AppData.xlsx");
+			File src = new File("C:\\Users\\kalpesh.Lenovo-kalpesh\\git\\DemoFramework_7Oct\\ApplicationTestData\\AppData.xlsx");
+			
 			FileInputStream fis = new FileInputStream(src);
 			wb = new XSSFWorkbook(fis);
 		} 

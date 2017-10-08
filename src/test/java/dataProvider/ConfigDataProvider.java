@@ -14,7 +14,7 @@ public class ConfigDataProvider {
 		public ConfigDataProvider(){
 			
 	        try {
-				File src = new File("./Configuration/Config.property");
+				File src = new File("./Configuration/config.properties");
 				
 				FileInputStream fis = new FileInputStream(src);
 				
