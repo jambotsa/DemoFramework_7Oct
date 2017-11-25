@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import ApplicationPages.HomePage;
+import ApplicationPages.Homepage;
 import ApplicationPages.LoginPage;
 import Factory.BrowserFactory;
 import Factory.DataProviderFactory;
@@ -40,7 +40,7 @@ public class VerifyLoginPageWithReports {
 	@Test
 	public void testLoginPage(){
 		
-		HomePage home = PageFactory.initElements(driver, HomePage.class);
+		Homepage home = PageFactory.initElements(driver, Homepage.class);
 		
 		String title = home.getApplicationTitle();
 		
@@ -48,7 +48,7 @@ public class VerifyLoginPageWithReports {
 		
 		logger.log(LogStatus.PASS, "Home Page loaded and verified");
 		
-		home.clickOnLoginLink();
+		home.clickOnLogin();
 		
 		logger.log(LogStatus.INFO, "Click on Login link");
 		

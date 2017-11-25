@@ -1,6 +1,5 @@
 package testCases;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -13,40 +12,30 @@ import Factory.BrowserFactory;
 import Factory.DataProviderFactory;
 
 public class VerifyHomePage {
-	
-	
-	
+
 	WebDriver driver;
-	
-	@BeforeMethod
-	public void setUp(){
-		
+
+	@BeforeMethod //// This will launch browser and specific url
+	public void setUp() {
+
 		driver = BrowserFactory.getBrowser("firefox");
 		driver.get(DataProviderFactory.getConfig().getApplicationUrl());
 	}
-	
-	@Test
-	public void testHomePage(){
-		
-		
-		Homepage home = PageFactory.initElements(driver,Homepage.class);
-			String title = home.getApplicationTitle();
-			Assert.assertTrue(title.contains("Avactis Demo Store"));
-			
+
+	@Test //// Created Page Object using Page Factory
+	public void testHomePage() {
+
+		Homepage home = PageFactory.initElements(driver, Homepage.class);
+		String title = home.getApplicationTitle(); //// Call the method from
+													//// homepage
+		Assert.assertTrue(title.contains("Avactis Demo Store"));
+
 	}
-	
+
 	@AfterMethod
-	public void tearDown(){
-		
+	public void tearDown() {
+
 		BrowserFactory.closeBrowser(driver);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
